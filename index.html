@@ -9,8 +9,88 @@
     <title>Weather App</title>
 </head>
 <body>
-    <main>
+    <main class="container" id="container">
+
+        <header>
+            <h1 id="title"><span class="locte"></span></h1>
+            <div class="header-icons">
+               <button class="edit" id="edit"><img src="images/page-icons/edit icon.svg" alt="edit icon"></button>
+               <button class="close" id="close"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg></button>
+            </div>
+            <div class="search-container">
+                <input type="text" class="search" placeholder="Type a city name here" id="input">
+                <div class="control-icons">
+                    <button class="locationBtn" id="locationBtn"><img src="images/page-icons/location icon.svg" alt="location icon"></button>
+
+                    <button class="searchBtn" id="searchBtn"><img src="images/page-icons/search icon.svg" alt="search icon"></button>
+                </div>
+            </div>
+        </header>
+
+        <section class="current-weather-background">
+            <img src="images/pictures/Cloudy.png" alt="background image">
+            <div class="details">
+                <h2>32<span class="degree">°c</span></h2>
+                <div class="weather-text">Cloudy</div>
+            </div>
+        </section>
+
         
+
+        <section class="current-weather-data">
+            <div class="current-date">Sunday 25, 2045</div>
+            <div class="data">
+                <div class="data-icon">
+                    <img src="images/page-icons/temperature icon.svg" alt="temperature icon">
+                </div>
+                <div class="data-details">
+                    <span class="feels-like">Feels Like</span>
+                    <p>32<span class="degree">°c</span></p>
+                </div>
+            </div>
+            <div class="data">
+                <div class="data-icon">
+                    <img src="images/page-icons/wind icon.svg" alt="wind icon">
+                </div>
+                <div class="data-details">
+                    <span class="feels-like">Wind</span>
+                    <p>19.2</p>
+                </div>
+            </div>
+            <div class="data">
+                <div class="data-icon">
+                    <img src="images/page-icons/himidity icon.svg" alt="humidity icon">
+                </div>
+                <div class="data-details">
+                    <span class="feels-like">Humidity</span>
+                    <p>68%</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="forcast-container">
+            <div class="forecast">
+                <div class="forcast-day">Sunday</div>
+                <div class="forcast-data">
+                    <div class="forcast-icon"><img src="images/weather-icons/partly-cloudy-day-rain.svg" alt="weather icon"></div>
+                    <p>28<span class="degree">°c</span></p>
+                </div>
+            </div>
+            <div class="forecast">
+                <div class="forcast-day">Monday</div>
+                <div class="forcast-data">
+                    <div class="forcast-icon"><img src="images/weather-icons/clear-day.svg" alt="weather icon"></div>
+                    <p>36<span class="degree">°c</span></p>
+                </div>
+            </div>
+            <div class="forecast">
+                <div class="forcast-day">Tuesday</div>
+                <div class="forcast-data">
+                    <div class="forcast-icon"><img src="images/weather-icons/partly-cloudy-day.svg" alt="weather icon"></div>
+                    <p>30<span class="degree">°c</span></p>
+                </div>
+            </div>
+        </section>
     </main>    
 </body>
 </html>
