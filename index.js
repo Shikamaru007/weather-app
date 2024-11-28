@@ -174,7 +174,7 @@ locationBtn.onclick = function getUserCurrentLocation(){
 // Async function that fetches the data based on search input.
 async function fetchSearchWeather(city){
     try{
-        const API = ' http://api.weatherapi.com/v1/forecast.json';
+        const API = ' https://api.weatherapi.com/v1/forecast.json';
         const API_KEY = 'a4458b4886a944eeaec204004241911';
 
         const response = await axios.get(API, {
@@ -196,7 +196,7 @@ async function fetchSearchWeather(city){
 // Async function that fetches the data based on longitude and latitude input.
 async function fetchLocationWeather(latitude, longitude) {
     try{
-        const API = ' http://api.weatherapi.com/v1/forecast.json';
+        const API = ' https://api.weatherapi.com/v1/forecast.json';
         const API_KEY = 'a4458b4886a944eeaec204004241911';
 
         const response = await axios.get(API, {
