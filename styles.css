@@ -21,6 +21,7 @@ body{
     display: flex;
     width: 100%;
     background-color: var(--main-background-colour);
+    min-height: 100vh;
 }
 .container{
     width: 90%;
@@ -28,8 +29,8 @@ body{
     flex-direction: column;
     margin-inline: auto;
     min-height: 100vh;
-    gap: 1.5rem;
-    padding: 2rem 0;
+    gap: clamp(1.4rem, 9.5vw, 3.5rem);
+    padding: 3rem 0;
 }
 .container > *:not(:first-child){
     display: none;
@@ -48,8 +49,11 @@ header{
 }
 h1{
     font-weight: 700;
-    font-size: 1.6rem;
+    font-size: clamp(1.4rem, 6.3vw, 2.2rem);
     color: var(--black);
+}
+.feels{
+    display: flex;
 }
 .container.show .search-container{
     display: none;
@@ -100,9 +104,11 @@ h1{
     background-color: rgb(242, 242, 242);
 }
 .locte{
-    font-size: 1rem;
+    font-size: clamp(.5rem, 3.2vw, .9rem);
     font-weight: 400;
     color: var(--gray);
+    margin-top: .4em;
+    margin-left: .3em;
 }
 .header-icons{
     margin-left: auto;
@@ -151,6 +157,18 @@ h1{
 .edit:hover{
     background-color: hsla(51, 100%, 96%, 0.116);
 }
+.currentIcon{
+    position: absolute;
+    z-index: 150;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    width: 60%;
+
+}
 .current-weather-background{
     width: 60%;
     margin-inline: auto;
@@ -180,25 +198,34 @@ h1{
 }
 h2{
     display: flex;
-    font-size: 3rem;
+    font-size:clamp(1.3rem, 13vw, 5rem);
+    line-height: 1.22;
+    margin-right: .05em;
 }
 .degree{
-    font-size: 1.5rem;
+    font-size:clamp(1rem, 4vw, 2rem);
 }
 .current-weather-background .details .weather-text{
-    font-size: 1rem;
+    font-size: clamp(.5rem, 4vw, 1.2rem);
     font-weight: 300;
+    align-self: end;
+    margin-bottom: .5em;
+    text-align: right;
+    
 }
 .current-date{
     width: 100%;
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: clamp(.8rem, 3vw, 1.2rem);
 }
 .current-weather-data{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
     margin-top: -.5rem;
+    gap: 1em;
 }
 .current-weather-data .data{
     display: flex;
@@ -209,6 +236,7 @@ h2{
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 .current-weather-data > .data:nth-child(3) .data-icon{
@@ -223,20 +251,34 @@ h2{
     line-height: 1;
     gap: .2rem;
 }
+
 .data-details span{
     font-weight: 400;
-    font-size: 1rem;
+    font-size: clamp(.7rem, 2.5vw, 1.2rem);
     color: var(--gray);
 }
-.data-details p{
-    font-size: 1.2rem;
+.data-details div span{
+    font-weight: 400;
+    font-size: clamp(.8em, 3.5vw, 1em);
+    color: var(--gray);
+}
+.data-details div{
+    display: flex;
+}
+.data-details  p{
+    font-size: clamp(.8rem, 4vw, 1.5rem);
     font-weight: 700;
     color: var(--black);
     display: flex;
 }
 .forcast-container{
     flex-direction: column;
-    gap: .5rem;
+    gap: .5em;
+    background-color: hsl(43, 45%, 21%);
+    color: white;
+    padding: .5em 1.5em;
+    border-radius: 10px;
+    border: 1px solid black;
 }
 .forecast{
     display: flex;
@@ -247,25 +289,64 @@ h2{
     font-size: 1rem;
 }
 .forcast-day{
-    color: var(--gray);
+    color: white;
     font-weight: 400;
-    font-size: .9rem;
+    font-size: clamp(.9rem, 3vw, 1.2rem);
 }
 .forcast-data{
     display: flex;
     align-items: center;
     justify-content: end;
-    gap: .5rem;
+    gap: 1.5em;
 }
-.forcast-data p{
-    font-weight: 600;
-    font-size: 1.3rem;
-    color: black;
+.forcast-data div{
     display: flex;
+}
+.forcast-data div p{
+    font-weight: 600;
+    font-size: clamp(1rem, 4.5vw, 1.5rem );
+    color: white;
+    display: flex;
+    margin-right: .2em;
 }
 .forcast-icon{
     width: 2.2rem;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+@media screen and (max-width:375px){
+    .container{
+        gap: 1.4rem;
+        padding: 1.5rem 0;
+    }
+
+}
+@media screen and (min-width:393px){
+    .current-weather-data .data{
+        gap: 2%;
+        flex: 1;
+        justify-content: center;
+    }
+    .data-icon{
+        width: clamp(2em, 7vw, 5em);
+    
+    }
+}
+@media screen and (max-width:203px){
+    .current-weather-data .data{
+        flex: 1;
+        justify-content: center;
+    }
+    .data-icon{
+        width: clamp(2em, 7vw, 5em);
+    
+    }
+}
+@media screen and (min-width:790px){
+   .container{
+    max-width: 700px;
+   }
 }
